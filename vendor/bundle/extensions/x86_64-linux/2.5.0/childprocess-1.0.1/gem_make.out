@@ -1,0 +1,5 @@
+current directory: /home/riddhi/Desktop/git101/blog/vendor/bundle/gems/childprocess-1.0.1/ext
+/usr/bin/ruby2.5 mkrf_conf.rb
+
+current directory: /home/riddhi/Desktop/git101/blog/vendor/bundle/gems/childprocess-1.0.1/ext
+/usr/bin/ruby2.5 -rrubygems /home/riddhi/Desktop/git101/blog/vendor/bundle/gems/rake-12.3.3/exe/rake RUBYARCHDIR=/home/riddhi/Desktop/git101/blog/vendor/bundle/extensions/x86_64-linux/2.5.0/childprocess-1.0.1 RUBYLIBDIR=/home/riddhi/Desktop/git101/blog/vendor/bundle/extensions/x86_64-linux/2.5.0/childprocess-1.0.1

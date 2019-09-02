@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Blog</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    
+
+    <div class="container">
+      <div class="user_nav">
+      <div class="notice">
+      <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p></div>
+      
+
+      <div class="top">
+        <% if user_signed_in? %>
+          Logged in as &nbsp;<% if current_user.username.blank? %>
+                                <strong><%= current_user.email %></strong>
+                             <% else %>
+                                <strong><%= current_user.username %></strong>
+                             <% end %>
+                              |
+          <%= link_to ' Edit Profile', edit_user_registration_path %> | 
+          <%= link_to ' Logout', destroy_user_session_path, method: :delete %>
+          <% end %>
+          </div> 
+        <% flash.each do |name,msg| %>
+          <% content_tag :div, msg, id: "flash_#{name}" %>
+        <% end %>
+      </div>
+    </div>
+    
+    
+
+    <%= yield %>
+  </body>
+</html>

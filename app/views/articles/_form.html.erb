@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+    <%= form_with model: [@article.user, @article], local: true do |form| %>
+     
+        <% if @article.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+              <% @article.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+       
+        <p>
+          <div class="field">
+          <%= form.label :title %><br>
+          <%= form.text_field :title, class:"form-control" %>
+          </div>
+        </p>
+       
+        <p>
+          <div class="field">
+          <%= form.label :body %><br>
+          <%= form.text_area :body, class:"form-control" %>
+        </div>
+        </p>
+       
+        <p>
+          <div class="field">
+          <%= form.submit %>
+        </div>
+        </p>
+       
+      <% end %>
+    </div>
+    </div>
+  </div>
