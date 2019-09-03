@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :articles , dependent: :destroy
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable, :trackable,:omniauthable
 
   # Setup accessible attributes for model
@@ -21,6 +21,8 @@ class User < ApplicationRecord
       if user.username.blank?
         user.username = auth.info.name
       end
+      user.skip_confirmation!
+      user.save
   	end
   end
 
